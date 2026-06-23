@@ -13,7 +13,7 @@ const skills = [
   { name: "Figma", icon: "bx bxl-figma" },
   { name: "WordPress", icon: "bx bxl-wordpress" },
   { name: "HTML5", icon: "bx bxl-html5" },
-  { name: "AI Automation", icon: "bx bx-bot" }
+  { name: "AI Engineering", icon: "bx bx-bot" }
 ];
 
 export default function Skills() {

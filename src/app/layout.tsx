@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Syne, DM_Sans, JetBrains_Mono } from "next/font/google";
 import Script from "next/script";
 import type { Viewport } from "next";
+import { Analytics } from "@vercel/analytics/react";
 import "./globals.css";
 
 export const viewport: Viewport = {
@@ -61,6 +62,7 @@ export default function RootLayout({
       </head>
       <body className={`${syne.variable} ${dmSans.variable} ${jetbrains.variable} bg-bone text-ink-950 font-sans antialiased noise`}>
         {children}
+        <Analytics />
         <Script src="/script.js" strategy="afterInteractive" />
       </body>
     </html>

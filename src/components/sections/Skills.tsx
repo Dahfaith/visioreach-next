@@ -10,7 +10,10 @@ const skills = [
   { name: "Tailwind CSS", icon: "bx bxl-tailwind-css" },
   { name: "Node.js", icon: "bx bxl-nodejs" },
   { name: "PostgreSQL", icon: "bx bxl-postgresql" },
-  { name: "Figma", icon: "bx bxl-figma" }
+  { name: "Figma", icon: "bx bxl-figma" },
+  { name: "WordPress", icon: "bx bxl-wordpress" },
+  { name: "HTML5", icon: "bx bxl-html5" },
+  { name: "AI Automation", icon: "bx bx-bot" }
 ];
 
 export default function Skills() {

@@ -3,16 +3,17 @@ import React from "react";
 import FadeIn from "@/components/ui/FadeIn";
 
 const skills = [
-  { name: "TypeScript", icon: "bx bxl-typescript" },
+  { name: "WordPress", icon: "bx bxl-wordpress" },
+  { name: "PHP Backend", icon: "bx bxl-php" },
   { name: "JavaScript", icon: "bx bxl-javascript" },
-  { name: "React", icon: "bx bxl-react" },
+  { name: "HTML5 / CSS3", icon: "bx bxl-html5" },
+  { name: "Elementor", icon: "bx bx-layer" },
+  { name: "Core SEO", icon: "bx bx-search-alt" },
+  { name: "Canva Pro", icon: "bx bx-paint" },
+  { name: "Optimization", icon: "bx bx-rocket" },
   { name: "Next.js", icon: "bx bxl-react" },
   { name: "Tailwind CSS", icon: "bx bxl-tailwind-css" },
-  { name: "Node.js", icon: "bx bxl-nodejs" },
   { name: "PostgreSQL", icon: "bx bxl-postgresql" },
-  { name: "Figma", icon: "bx bxl-figma" },
-  { name: "WordPress", icon: "bx bxl-wordpress" },
-  { name: "HTML5", icon: "bx bxl-html5" },
   { name: "AI Engineering", icon: "bx bx-bot" }
 ];
 

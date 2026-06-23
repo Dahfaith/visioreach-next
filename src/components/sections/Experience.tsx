@@ -85,6 +85,55 @@ export default function Experience() {
           </div>
         </div>
 
+        {/* Education History */}
+        <header className="grid grid-cols-12 gap-x-6 gap-y-4 border-t border-ink-800 pt-6 md:pt-8 mt-24 mb-16">
+          <FadeIn direction="up" delay={100} className="col-span-12 md:col-span-3 flex items-start gap-3">
+            <span className="font-mono text-[11px] uppercase tracking-[0.18em] text-ink-400">03</span>
+            <span className="font-mono text-[11px] uppercase tracking-[0.18em] text-ink-500">Education</span>
+          </FadeIn>
+          <div className="col-span-12 md:col-span-9">
+            <FadeIn direction="up" delay={200}>
+              <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl leading-[1.02] tracking-display text-balance">
+                Academic background. <span className="italic text-ink-400">foundations.</span>
+              </h2>
+            </FadeIn>
+          </div>
+        </header>
+
+        <div className="grid grid-cols-12 gap-x-6">
+          <div className="col-span-12 md:col-span-9 md:col-start-4">
+            <div className="space-y-16">
+              <FadeIn direction="up" delay={300} className="group border-b border-ink-800 pb-12 last:border-0 last:pb-0">
+                <div className="flex flex-col md:flex-row md:items-baseline justify-between mb-4">
+                  <h3 className="font-serif text-3xl md:text-4xl text-bone tracking-display group-hover:text-flare transition-colors">
+                    Ladoke Akintola University of Technology (LAUTECH)
+                  </h3>
+                  <div className="font-mono text-[11px] uppercase tracking-[0.22em] text-ink-500 mt-2 md:mt-0">
+                    2021 — 2025
+                  </div>
+                </div>
+                <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-flare mb-6">
+                  B.Sc. Computer Science
+                </p>
+              </FadeIn>
+
+              <FadeIn direction="up" delay={400} className="group border-b border-ink-800 pb-12 last:border-0 last:pb-0">
+                <div className="flex flex-col md:flex-row md:items-baseline justify-between mb-4">
+                  <h3 className="font-serif text-3xl md:text-4xl text-bone tracking-display group-hover:text-flare transition-colors">
+                    Oyo State School of Science
+                  </h3>
+                  <div className="font-mono text-[11px] uppercase tracking-[0.22em] text-ink-500 mt-2 md:mt-0">
+                    2014 — 2017
+                  </div>
+                </div>
+                <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-flare mb-6">
+                  Senior Secondary Certificate (SSCE)
+                </p>
+              </FadeIn>
+            </div>
+          </div>
+        </div>
+
       </div>
     </section>
   );

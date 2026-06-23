@@ -69,9 +69,9 @@ export default function Footer() {
           <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-ink-500">
             © {new Date().getFullYear()} GIDEON OLUWATOBI · VISIOREACH CONCEPTS. ALL RIGHTS RESERVED.
           </p>
-          <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-ink-500">
+          <a href="#contact" className="font-mono text-[10px] uppercase tracking-[0.2em] text-ink-500 hover:text-flare transition-colors">
             LET'S BUILD SOMETHING GREAT.
-          </p>
+          </a>
         </div>
 
       </div>

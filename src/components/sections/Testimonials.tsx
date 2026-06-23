@@ -88,7 +88,7 @@ export default function Testimonials() {
             style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
           >
             {testimonials.map((testi, index) => (
-              <FadeIn key={testi.id} direction="up" delay={index * 50} className="flex flex-col min-w-full md:min-w-[420px] snap-center border border-ink-100 p-8 hover:bg-white transition-colors shrink-0">
+              <FadeIn key={testi.id} direction="up" delay={index * 50} className="flex flex-col w-full md:w-[400px] shrink-0 snap-center border border-ink-100 p-8 hover:bg-white transition-colors">
                 <div className="mb-6 text-ink-900 text-sm">
                   {"★".repeat(testi.stars || 5)}
                 </div>

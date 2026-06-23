@@ -28,32 +28,23 @@ export default function Footer() {
     <footer id="contact" className="bg-bone border-t border-ink-100 pt-20 pb-10">
       <div className="mx-auto max-w-[1400px] px-5 md:px-10">
         
-        <div className="grid grid-cols-12 gap-x-6 gap-y-12">
+        <div className="flex flex-col md:flex-row justify-between items-start gap-12">
           
-          <div className="col-span-12 md:col-span-6 lg:col-span-5">
+          <div className="flex flex-col">
             <FadeIn direction="up" delay={100}>
-              <h2 className="font-serif text-3xl md:text-5xl text-ink-900 tracking-display mb-4">
-                Let's talk about your next project.
+              <h2 className="font-serif text-4xl md:text-5xl text-ink-900 tracking-display mb-3">
+                VisioReach<span className="text-flare">.</span>
               </h2>
-              <p className="text-ink-600 text-sm leading-relaxed max-w-sm mb-8">
-                Whether you need a full digital overhaul or a custom scalable product, we are ready to bring your vision to production.
+              <p className="font-mono text-[10px] md:text-[11px] uppercase tracking-[0.2em] text-ink-500 mb-12">
+                FULLSTACK ENGINEER · DESIGN TO DEVELOPMENT
               </p>
               
-              <a href="mailto:visioreach@gmail.com" className="inline-flex items-center gap-3 px-6 py-3 bg-ink-900 text-bone font-mono text-[11px] uppercase tracking-[0.22em] hover:bg-flare transition-colors">
-                <span>visioreach@gmail.com</span>
-                <span className="inline-block transition-transform group-hover:translate-x-1">→</span>
-              </a>
-            </FadeIn>
-          </div>
-
-          <div className="col-span-12 md:col-span-3 lg:col-span-2 lg:col-start-8">
-            <FadeIn direction="up" delay={200}>
-              <h3 className="font-mono text-[11px] uppercase tracking-[0.22em] text-ink-500 mb-6">Socials</h3>
-              <ul className="space-y-3 font-mono text-[11px] uppercase tracking-[0.14em] text-ink-800">
+              <ul className="space-y-4 font-mono text-[11px] uppercase tracking-[0.2em] text-ink-800">
                 {socials.map((social) => (
                   <li key={social.id}>
-                    <a href={social.url} target="_blank" rel="noreferrer" className="hover:text-flare transition-colors">
-                      {social.platform_name}
+                    <a href={social.url} target="_blank" rel="noreferrer" className="hover:text-flare transition-colors inline-flex items-center gap-2 group">
+                      {social.platform_name} 
+                      <span className="text-ink-400 group-hover:text-flare group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform">↗</span>
                     </a>
                   </li>
                 ))}
@@ -61,26 +52,25 @@ export default function Footer() {
             </FadeIn>
           </div>
 
-          <div className="col-span-12 md:col-span-3 lg:col-span-2">
-            <FadeIn direction="up" delay={300}>
-              <h3 className="font-mono text-[11px] uppercase tracking-[0.22em] text-ink-500 mb-6">Index</h3>
-              <ul className="space-y-3 font-mono text-[11px] uppercase tracking-[0.14em] text-ink-800">
-                <li><a href="#about" className="hover:text-flare transition-colors">01 About</a></li>
-                <li><a href="#services" className="hover:text-flare transition-colors">02 Capabilities</a></li>
-                <li><a href="#projects" className="hover:text-flare transition-colors">03 Work</a></li>
-                <li><a href="#contact-form" className="hover:text-flare transition-colors">04 Contact</a></li>
-              </ul>
+          <div className="flex flex-col justify-end mt-8 md:mt-auto h-full w-full md:w-auto items-start md:items-end">
+            <FadeIn direction="up" delay={200}>
+               <button 
+                 onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} 
+                 className="font-mono text-[11px] uppercase tracking-[0.2em] text-flare hover:text-ink-900 transition-colors inline-flex items-center gap-2"
+               >
+                 <span className="text-lg leading-none mb-1">↑</span> BACK TO TOP
+               </button>
             </FadeIn>
           </div>
 
         </div>
 
-        <div className="mt-24 pt-8 border-t border-ink-100 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-ink-400">
-            © {new Date().getFullYear()} VisioReach Concepts.
+        <div className="mt-24 pt-8 border-t border-ink-100 flex flex-col gap-4">
+          <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-ink-500">
+            © {new Date().getFullYear()} GIDEON OLUWATOBI · VISIOREACH CONCEPTS. ALL RIGHTS RESERVED.
           </p>
-          <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-ink-400">
-            Built with Next.js & Tailwind.
+          <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-ink-500">
+            HIRE ME TODAY!
           </p>
         </div>
 

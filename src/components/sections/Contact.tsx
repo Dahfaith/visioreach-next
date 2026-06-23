@@ -18,8 +18,8 @@ export default function Contact() {
     setStatus("loading");
     try {
       await emailjs.send(
-        "service_s9b66n4",
-        "template_8w82n58",
+        "service_13qig5j",
+        "template_d6wbo9g",
         {
           from_name: formData.name,
           reply_to: formData.email,
@@ -27,7 +27,7 @@ export default function Contact() {
           service: formData.service,
           message: formData.message,
         },
-        "zD-hWj55776077qH5"
+        "AyLw7OkdSV9Y-LVmI"
       );
       setStatus("success");
       setFormData({ name: "", email: "", subject: "", service: "", message: "" });

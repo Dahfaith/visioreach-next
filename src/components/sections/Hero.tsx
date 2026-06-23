@@ -77,6 +77,52 @@ export default function Hero() {
 
         </div>
 
+        {/* Stats Grid */}
+        <div className="mt-12 md:mt-16 grid grid-cols-2 md:grid-cols-4 gap-x-6 gap-y-10 border-t border-ink-100 pt-10">
+           <FadeIn direction="up" delay={800} className="col-span-1">
+             <p className="font-serif text-3xl md:text-5xl text-ink-900 tracking-display">15+</p>
+             <p className="font-mono text-[10px] uppercase tracking-[0.22em] text-ink-500 mt-2">Products Shipped</p>
+           </FadeIn>
+           <FadeIn direction="up" delay={900} className="col-span-1">
+             <p className="font-serif text-3xl md:text-5xl text-ink-900 tracking-display">5+</p>
+             <p className="font-mono text-[10px] uppercase tracking-[0.22em] text-ink-500 mt-2">Industries</p>
+           </FadeIn>
+           <FadeIn direction="up" delay={1000} className="col-span-1">
+             <p className="font-serif text-3xl md:text-5xl text-ink-900 tracking-display">99.9%</p>
+             <p className="font-mono text-[10px] uppercase tracking-[0.22em] text-ink-500 mt-2">Uptime Mindset</p>
+           </FadeIn>
+           <FadeIn direction="up" delay={1100} className="col-span-1">
+             <p className="font-serif text-3xl md:text-5xl text-ink-900 tracking-display">∞</p>
+             <p className="font-mono text-[10px] uppercase tracking-[0.22em] text-ink-500 mt-2">Curiosity</p>
+           </FadeIn>
+        </div>
+
+      </div>
+
+      {/* Infinite Tech Marquee */}
+      <div className="mt-20 md:mt-32 border-y border-ink-100 py-6 overflow-hidden relative flex bg-ink-950">
+        <div className="flex animate-marquee whitespace-nowrap font-serif text-2xl md:text-4xl italic text-ink-200 tracking-wide">
+           <span className="mx-6">Framer Motion</span> <span className="mx-6 text-flare">·</span>
+           <span className="mx-6">React</span> <span className="mx-6 text-flare">·</span>
+           <span className="mx-6">Next.js</span> <span className="mx-6 text-flare">·</span>
+           <span className="mx-6">TypeScript</span> <span className="mx-6 text-flare">·</span>
+           <span className="mx-6">Tailwind CSS</span> <span className="mx-6 text-flare">·</span>
+           <span className="mx-6">PostgreSQL</span> <span className="mx-6 text-flare">·</span>
+           <span className="mx-6">Node.js</span> <span className="mx-6 text-flare">·</span>
+           <span className="mx-6">WordPress</span> <span className="mx-6 text-flare">·</span>
+           <span className="mx-6">AI Engineering</span> <span className="mx-6 text-flare">·</span>
+           
+           {/* Duplicate for seamless looping */}
+           <span className="mx-6">Framer Motion</span> <span className="mx-6 text-flare">·</span>
+           <span className="mx-6">React</span> <span className="mx-6 text-flare">·</span>
+           <span className="mx-6">Next.js</span> <span className="mx-6 text-flare">·</span>
+           <span className="mx-6">TypeScript</span> <span className="mx-6 text-flare">·</span>
+           <span className="mx-6">Tailwind CSS</span> <span className="mx-6 text-flare">·</span>
+           <span className="mx-6">PostgreSQL</span> <span className="mx-6 text-flare">·</span>
+           <span className="mx-6">Node.js</span> <span className="mx-6 text-flare">·</span>
+           <span className="mx-6">WordPress</span> <span className="mx-6 text-flare">·</span>
+           <span className="mx-6">AI Engineering</span> <span className="mx-6 text-flare">·</span>
+        </div>
       </div>
     </section>
   );

@@ -19,7 +19,7 @@ export default function About() {
   return (
     <section id="about" className="py-20 md:py-32 bg-bone">
       <div className="mx-auto max-w-[1400px] px-5 md:px-10">
-        
+
         <header className="grid grid-cols-12 gap-x-6 gap-y-4 border-t border-ink-100 pt-6 md:pt-8 mb-16">
           <FadeIn direction="up" delay={100} className="col-span-12 md:col-span-3 flex items-start gap-3">
             <span className="font-mono text-[11px] uppercase tracking-[0.18em] text-ink-500">01</span>
@@ -35,13 +35,13 @@ export default function About() {
         </header>
 
         <div className="grid grid-cols-12 gap-x-6 gap-y-12">
-          
+
           <div className="col-span-12 md:col-span-3">
             <FadeIn direction="up" delay={200}>
               <div className="aspect-[3/4] overflow-hidden bg-ink-100 w-full relative grayscale hover:grayscale-0 transition-all duration-700 border border-ink-100">
-                <img 
-                  src={profile?.image_url || "/images/myself.jpg"} 
-                  alt="VisioReach Concepts" 
+                <img
+                  src={profile?.image_url || "/images/myself.jpg"}
+                  alt="VisioReach Concepts"
                   className="w-full h-full object-cover"
                 />
               </div>
@@ -62,13 +62,33 @@ export default function About() {
             </FadeIn>
 
             <FadeIn direction="up" delay={400} className="mt-12 flex flex-col md:flex-row gap-6">
-              <a href="#contact-form" className="inline-flex items-center gap-3 px-6 py-3 bg-ink-900 text-bone font-mono text-[11px] uppercase tracking-[0.22em] hover:bg-flare transition-colors">
+              <a href="#contact" className="inline-flex items-center gap-3 px-6 py-3 bg-ink-900 text-bone font-mono text-[11px] uppercase tracking-[0.22em] hover:bg-flare transition-colors">
                 <span>Contact Us</span>
                 <span className="inline-block transition-transform group-hover:translate-x-1">→</span>
               </a>
               <a href={profile?.resume_url || "/resume.html"} target="_blank" className="inline-flex items-center justify-center gap-3 px-6 py-3 border border-ink-200 text-ink-900 font-mono text-[11px] uppercase tracking-[0.22em] hover:border-ink-900 transition-colors">
                 <span>Download Resume</span>
               </a>
+            </FadeIn>
+
+            {/* Quick Facts */}
+            <FadeIn direction="up" delay={500} className="mt-16 pt-10 border-t border-ink-100 grid grid-cols-2 gap-y-8 gap-x-6">
+              <div>
+                <p className="font-mono text-[10px] uppercase tracking-[0.22em] text-ink-500 mb-2">Full Name</p>
+                <p className="font-serif text-lg text-ink-900">Gideon Oluwatobi</p>
+              </div>
+              <div>
+                <p className="font-mono text-[10px] uppercase tracking-[0.22em] text-ink-500 mb-2">Brand</p>
+                <p className="font-serif text-lg text-ink-900">Visioreach Concepts</p>
+              </div>
+              <div>
+                <p className="font-mono text-[10px] uppercase tracking-[0.22em] text-ink-500 mb-2">Based In</p>
+                <p className="font-serif text-lg text-ink-900">Lagos, Nigeria</p>
+              </div>
+              <div>
+                <p className="font-mono text-[10px] uppercase tracking-[0.22em] text-ink-500 mb-2">Open To</p>
+                <p className="font-serif text-lg text-ink-900">Freelance & Full-time Roles</p>
+              </div>
             </FadeIn>
           </div>
 

@@ -147,6 +147,17 @@ export default function Projects() {
           ))}
         </ul>
 
+        {/* NDA Note & GitHub Link */}
+        <FadeIn direction="up" delay={200} className="mt-16 pt-8 border-t border-ink-100 flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
+          <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-ink-500 max-w-md leading-relaxed">
+            Note: Most recent client work and internal enterprise tools are under NDA.
+          </p>
+          <a href="https://github.com/Dahfaith" target="_blank" rel="noreferrer" className="inline-flex items-center gap-3 px-6 py-3 border border-ink-200 text-ink-900 font-mono text-[11px] uppercase tracking-[0.22em] hover:bg-ink-900 hover:text-bone transition-colors group">
+            <span>See more on GitHub</span>
+            <span className="inline-block transition-transform group-hover:translate-x-1">→</span>
+          </a>
+        </FadeIn>
+
       </div>
 
       {/* Floating Desktop Image Reveal */}

@@ -5,13 +5,43 @@ import Link from "next/link";
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [timeData, setTimeData] = useState({ time: "", location: "LOCAL" });
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
+    setMounted(true);
+    
+    // Get visitor's location from their browser timezone
+    let locationStr = "LOCAL";
+    try {
+      const tz = Intl.DateTimeFormat().resolvedOptions().timeZone;
+      if (tz) {
+        // e.g. "America/New_York" -> "New York", "Africa/Lagos" -> "Lagos"
+        const city = tz.split('/').pop()?.replace(/_/g, ' ') || "LOCAL";
+        locationStr = city.toUpperCase();
+      }
+    } catch (e) {
+      // Fallback
+    }
+
+    const updateTime = () => {
+      const now = new Date();
+      const timeString = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', hour12: false });
+      setTimeData({ time: timeString, location: locationStr });
+    };
+    
+    updateTime();
+    const interval = setInterval(updateTime, 1000);
+
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
     };
     window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    
+    return () => {
+      clearInterval(interval);
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, []);
 
   return (
@@ -52,7 +82,7 @@ export default function Navbar() {
           </div>
 
           {/* Right Status (Desktop) */}
-          <div className="hidden md:flex items-center gap-5">
+          <div className="hidden md:flex items-center gap-6">
             <div className="flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.18em] text-ink-600">
               <span className="relative flex h-1.5 w-1.5">
                 <span className="absolute inline-flex h-full w-full rounded-full bg-emerald-400/60 animate-ping"></span>
@@ -60,6 +90,11 @@ export default function Navbar() {
               </span>
               <span>Available · 2026</span>
             </div>
+            {mounted && (
+              <div className="flex items-center font-mono text-[11px] uppercase tracking-[0.18em] text-ink-600">
+                <span>{timeData.location} · {timeData.time}</span>
+              </div>
+            )}
           </div>
 
           {/* Mobile Toggle */}

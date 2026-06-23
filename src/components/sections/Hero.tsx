@@ -1,8 +1,19 @@
 "use client";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import FadeIn from "@/components/ui/FadeIn";
+import { supabase } from "@/lib/supabaseClient";
 
 export default function Hero() {
+  const [profile, setProfile] = useState<any>(null);
+
+  useEffect(() => {
+    async function fetchProfile() {
+      const { data } = await supabase.from('profile').select('*').single();
+      if (data) setProfile(data);
+    }
+    fetchProfile();
+  }, []);
+
   return (
     <section className="relative pt-24 md:pt-40 pb-10 min-h-[90vh] flex flex-col justify-center border-b border-ink-100">
       <div className="mx-auto max-w-[1400px] px-5 md:px-10 w-full">
@@ -80,20 +91,20 @@ export default function Hero() {
         {/* Stats Grid */}
         <div className="mt-12 md:mt-16 grid grid-cols-2 md:grid-cols-4 gap-x-6 gap-y-10 border-t border-ink-100 pt-10">
            <FadeIn direction="up" delay={800} className="col-span-1">
-             <p className="font-serif text-3xl md:text-5xl text-ink-900 tracking-display">15+</p>
-             <p className="font-mono text-[10px] uppercase tracking-[0.22em] text-ink-500 mt-2">Products Shipped</p>
+             <p className="font-serif text-3xl md:text-5xl text-ink-900 tracking-display">{profile?.stat_1_number || "15+"}</p>
+             <p className="font-mono text-[10px] uppercase tracking-[0.22em] text-ink-500 mt-2">{profile?.stat_1_label || "Products Shipped"}</p>
            </FadeIn>
            <FadeIn direction="up" delay={900} className="col-span-1">
-             <p className="font-serif text-3xl md:text-5xl text-ink-900 tracking-display">5+</p>
-             <p className="font-mono text-[10px] uppercase tracking-[0.22em] text-ink-500 mt-2">Industries</p>
+             <p className="font-serif text-3xl md:text-5xl text-ink-900 tracking-display">{profile?.stat_2_number || "5+"}</p>
+             <p className="font-mono text-[10px] uppercase tracking-[0.22em] text-ink-500 mt-2">{profile?.stat_2_label || "Industries"}</p>
            </FadeIn>
            <FadeIn direction="up" delay={1000} className="col-span-1">
-             <p className="font-serif text-3xl md:text-5xl text-ink-900 tracking-display">99.9%</p>
-             <p className="font-mono text-[10px] uppercase tracking-[0.22em] text-ink-500 mt-2">Uptime Mindset</p>
+             <p className="font-serif text-3xl md:text-5xl text-ink-900 tracking-display">{profile?.stat_3_number || "99.9%"}</p>
+             <p className="font-mono text-[10px] uppercase tracking-[0.22em] text-ink-500 mt-2">{profile?.stat_3_label || "Uptime Mindset"}</p>
            </FadeIn>
            <FadeIn direction="up" delay={1100} className="col-span-1">
-             <p className="font-serif text-3xl md:text-5xl text-ink-900 tracking-display">∞</p>
-             <p className="font-mono text-[10px] uppercase tracking-[0.22em] text-ink-500 mt-2">Curiosity</p>
+             <p className="font-serif text-3xl md:text-5xl text-ink-900 tracking-display">{profile?.stat_4_number || "∞"}</p>
+             <p className="font-mono text-[10px] uppercase tracking-[0.22em] text-ink-500 mt-2">{profile?.stat_4_label || "Curiosity"}</p>
            </FadeIn>
         </div>
 

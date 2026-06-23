@@ -70,7 +70,7 @@ export default function Footer() {
             © {new Date().getFullYear()} GIDEON OLUWATOBI · VISIOREACH CONCEPTS. ALL RIGHTS RESERVED.
           </p>
           <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-ink-500">
-            HIRE ME TODAY!
+            LET'S BUILD SOMETHING GREAT.
           </p>
         </div>
 

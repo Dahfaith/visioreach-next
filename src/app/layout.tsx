@@ -28,13 +28,13 @@ const jetbrains = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "VisioReach Concepts | Premium Web Developer & Digital Brand | Lagos Nigeria",
-  description: "VisioReach Concepts – Premium web development, custom web applications, and digital branding for businesses and corporate companies across Lagos, Ibadan, Ogbomosho, Osogbo, and Ekiti.",
-  keywords: "web developer lagos, business website design ibadan, web application development ogbomosho, company website creator osogbo, e-commerce developer ekiti, custom software development nigeria, corporate website builder lagos, portfolio web designer ibadan, visioreach concepts",
+  title: "VisioReach Concepts | Web Developer & Digital Agency in Lagos, Ibadan, Osun",
+  description: "VisioReach Concepts is a premium web development and digital branding agency helping businesses scale. We build custom websites, e-commerce, and software for clients in Lagos, Ibadan, Ogbomoso, Osun State, Ondo, Ekiti, and across Nigeria.",
+  keywords: "web developer lagos, website design ibadan, software engineer ogbomoso, web application development osun state, e-commerce developer ondo, corporate website builder ekiti, digital agency southwest nigeria, seo expert lagos, visioreach concepts",
   authors: [{ name: "VisioReach Concepts" }],
   openGraph: {
-    title: "VisioReach Concepts – Corporate Web & App Development",
-    description: "Crafting premium websites and feature-rich web applications for companies across Lagos, Ibadan, Ogbomosho, Osogbo, and Ekiti.",
+    title: "VisioReach Concepts – Premium Web Development Agency",
+    description: "Crafting premium websites and feature-rich web applications for companies across Lagos, Ibadan, Ogbomoso, Osun, Ondo, and Ekiti.",
     url: "https://visioreach.co",
     siteName: "VisioReach Concepts",
     images: [{ url: "https://visioreach.co/assets/images/og-image.jpg" }],
@@ -43,8 +43,8 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     site: "@visioreach",
-    title: "VisioReach Concepts – Premium Web Developer",
-    description: "Crafting premium websites & digital experiences for modern brands.",
+    title: "VisioReach Concepts – Web Developer in Nigeria",
+    description: "Crafting premium websites & digital experiences for modern brands across Lagos, Ibadan, and Osun State.",
     images: ["https://visioreach.co/assets/images/og-image.jpg"],
   },
 };

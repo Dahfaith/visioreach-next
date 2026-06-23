@@ -73,7 +73,7 @@ export default function Contact() {
                 
                 <div>
                   <span className="block font-mono text-[11px] uppercase tracking-[0.18em] text-ink-500 mb-2">WhatsApp</span>
-                  <a href="https://wa.me/message/P24GXY7J6HCKL1" target="_blank" rel="noreferrer" className="text-ink-900 hover:text-flare transition-colors">
+                  <a href="https://wa.me/2347069659752?text=Hello%20Visioreach%20im%20coming%20from%20your%20portfolio%2C%20i%20need%20your%20services" target="_blank" rel="noreferrer" className="text-ink-900 hover:text-flare transition-colors">
                     Chat on WhatsApp
                   </a>
                 </div>

@@ -39,8 +39,8 @@ export default function Footer() {
                 Whether you need a full digital overhaul or a custom scalable product, we are ready to bring your vision to production.
               </p>
               
-              <a href="mailto:hello@visioreach.co" className="inline-flex items-center gap-3 px-6 py-3 bg-ink-900 text-bone font-mono text-[11px] uppercase tracking-[0.22em] hover:bg-flare transition-colors">
-                <span>hello@visioreach.co</span>
+              <a href="mailto:visioreach@gmail.com" className="inline-flex items-center gap-3 px-6 py-3 bg-ink-900 text-bone font-mono text-[11px] uppercase tracking-[0.22em] hover:bg-flare transition-colors">
+                <span>visioreach@gmail.com</span>
                 <span className="inline-block transition-transform group-hover:translate-x-1">→</span>
               </a>
             </FadeIn>

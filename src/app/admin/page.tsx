@@ -278,7 +278,47 @@ export default function AdminDashboard() {
                 <textarea value={profile?.bio_text_3 || ""} onChange={e => setProfile({...profile, bio_text_3: e.target.value})} className="border border-ink-200 p-3 bg-transparent text-ink-900 focus:outline-none focus:border-ink-900 transition-colors min-h-[120px] resize-y" />
               </div>
 
-              <button type="submit" className="bg-ink-900 text-bone px-6 py-4 mt-4 font-mono text-[11px] uppercase tracking-[0.15em] hover:bg-flare transition-colors">
+              <h4 className="font-serif text-2xl text-ink-900 mt-8 mb-4 border-b border-ink-100 pb-2">Hero Stats Grid</h4>
+              
+              <div className="grid grid-cols-2 gap-6">
+                <div className="flex flex-col gap-2">
+                  <label className="font-mono text-[11px] uppercase tracking-[0.1em] text-ink-600">Stat 1 Number</label>
+                  <input type="text" value={profile?.stat_1_number || ""} onChange={e => setProfile({...profile, stat_1_number: e.target.value})} placeholder="e.g. 15+" className="border border-ink-200 p-3 bg-transparent text-ink-900 focus:outline-none focus:border-ink-900 transition-colors" />
+                </div>
+                <div className="flex flex-col gap-2">
+                  <label className="font-mono text-[11px] uppercase tracking-[0.1em] text-ink-600">Stat 1 Label</label>
+                  <input type="text" value={profile?.stat_1_label || ""} onChange={e => setProfile({...profile, stat_1_label: e.target.value})} placeholder="e.g. Products Shipped" className="border border-ink-200 p-3 bg-transparent text-ink-900 focus:outline-none focus:border-ink-900 transition-colors" />
+                </div>
+
+                <div className="flex flex-col gap-2">
+                  <label className="font-mono text-[11px] uppercase tracking-[0.1em] text-ink-600">Stat 2 Number</label>
+                  <input type="text" value={profile?.stat_2_number || ""} onChange={e => setProfile({...profile, stat_2_number: e.target.value})} placeholder="e.g. 5+" className="border border-ink-200 p-3 bg-transparent text-ink-900 focus:outline-none focus:border-ink-900 transition-colors" />
+                </div>
+                <div className="flex flex-col gap-2">
+                  <label className="font-mono text-[11px] uppercase tracking-[0.1em] text-ink-600">Stat 2 Label</label>
+                  <input type="text" value={profile?.stat_2_label || ""} onChange={e => setProfile({...profile, stat_2_label: e.target.value})} placeholder="e.g. Industries" className="border border-ink-200 p-3 bg-transparent text-ink-900 focus:outline-none focus:border-ink-900 transition-colors" />
+                </div>
+
+                <div className="flex flex-col gap-2">
+                  <label className="font-mono text-[11px] uppercase tracking-[0.1em] text-ink-600">Stat 3 Number</label>
+                  <input type="text" value={profile?.stat_3_number || ""} onChange={e => setProfile({...profile, stat_3_number: e.target.value})} placeholder="e.g. 99.9%" className="border border-ink-200 p-3 bg-transparent text-ink-900 focus:outline-none focus:border-ink-900 transition-colors" />
+                </div>
+                <div className="flex flex-col gap-2">
+                  <label className="font-mono text-[11px] uppercase tracking-[0.1em] text-ink-600">Stat 3 Label</label>
+                  <input type="text" value={profile?.stat_3_label || ""} onChange={e => setProfile({...profile, stat_3_label: e.target.value})} placeholder="e.g. Uptime Mindset" className="border border-ink-200 p-3 bg-transparent text-ink-900 focus:outline-none focus:border-ink-900 transition-colors" />
+                </div>
+
+                <div className="flex flex-col gap-2">
+                  <label className="font-mono text-[11px] uppercase tracking-[0.1em] text-ink-600">Stat 4 Number</label>
+                  <input type="text" value={profile?.stat_4_number || ""} onChange={e => setProfile({...profile, stat_4_number: e.target.value})} placeholder="e.g. ∞" className="border border-ink-200 p-3 bg-transparent text-ink-900 focus:outline-none focus:border-ink-900 transition-colors" />
+                </div>
+                <div className="flex flex-col gap-2">
+                  <label className="font-mono text-[11px] uppercase tracking-[0.1em] text-ink-600">Stat 4 Label</label>
+                  <input type="text" value={profile?.stat_4_label || ""} onChange={e => setProfile({...profile, stat_4_label: e.target.value})} placeholder="e.g. Curiosity" className="border border-ink-200 p-3 bg-transparent text-ink-900 focus:outline-none focus:border-ink-900 transition-colors" />
+                </div>
+              </div>
+
+              <button type="submit" className="bg-ink-900 text-bone px-6 py-4 mt-8 font-mono text-[11px] uppercase tracking-[0.15em] hover:bg-flare transition-colors">
                 Save Profile
               </button>
             </form>

@@ -47,17 +47,17 @@ export default function ProjectModal({ isOpen, onClose, onSuccess, project }: Pr
     const filePath = `${fileName}`;
 
     const { error: uploadError } = await supabase.storage
-      .from('media')
+      .from('portfolio-images')
       .upload(filePath, file);
 
     if (uploadError) {
       console.error("Upload error:", uploadError);
-      alert("Error uploading image. Make sure you created a public 'media' bucket.");
+      alert("Error uploading image.");
       setUploadingImage(false);
       return;
     }
 
-    const { data } = supabase.storage.from('media').getPublicUrl(filePath);
+    const { data } = supabase.storage.from('portfolio-images').getPublicUrl(filePath);
     setFormData({ ...formData, image_url: data.publicUrl });
     setUploadingImage(false);
   }
@@ -123,7 +123,7 @@ export default function ProjectModal({ isOpen, onClose, onSuccess, project }: Pr
               disabled={uploadingImage}
               className="border border-ink-200 p-3 bg-transparent text-ink-900 focus:outline-none focus:border-ink-900 transition-colors file:mr-4 file:py-2 file:px-4 file:border-0 file:text-sm file:font-semibold file:bg-ink-100 file:text-ink-900 hover:file:bg-ink-200 cursor-pointer" 
             />
-            {uploadingImage && <span className="text-xs text-ink-500 italic mt-1">Uploading image to media bucket...</span>}
+            {uploadingImage && <span className="text-xs text-ink-500 italic mt-1">Uploading image...</span>}
             {formData.image_url && <img src={formData.image_url} alt="Preview" className="w-full h-32 object-cover grayscale mt-2 border border-ink-100" />}
           </div>
 

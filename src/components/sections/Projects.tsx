@@ -14,18 +14,7 @@ export default function Projects() {
   useEffect(() => {
     async function fetchProjects() {
       const { data } = await supabase.from('projects').select('*').order('created_at', { ascending: false });
-      if (data) {
-        const injectedProject = {
-          id: "247billz-injected",
-          title: "247Billz",
-          description: "A premium invoicing and receipt generation platform built with Next.js, Supabase, and Tailwind. Features an enterprise-grade admin dashboard, interactive charts, and real-time CSV exports.",
-          category: "web, saas",
-          github_url: "https://github.com/Dahfaith/247Billz",
-          live_url: "https://247billz.vercel.app",
-          image_url: ""
-        };
-        setProjects([injectedProject, ...data]);
-      }
+      if (data) setProjects(data);
     }
     fetchProjects();
   }, []);

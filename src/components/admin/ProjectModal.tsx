@@ -20,6 +20,8 @@ export default function ProjectModal({ isOpen, onClose, onSuccess, project }: Pr
   });
   const [loading, setLoading] = useState(false);
 
+  const [uploadingImage, setUploadingImage] = useState(false);
+
   useEffect(() => {
     if (project) {
       setFormData({
@@ -34,6 +36,31 @@ export default function ProjectModal({ isOpen, onClose, onSuccess, project }: Pr
       setFormData({ title: "", description: "", category: "", live_url: "", github_url: "", image_url: "" });
     }
   }, [project, isOpen]);
+
+  async function handleImageUpload(e: React.ChangeEvent<HTMLInputElement>) {
+    const file = e.target.files?.[0];
+    if (!file) return;
+
+    setUploadingImage(true);
+    const fileExt = file.name.split('.').pop();
+    const fileName = `project-${Math.random().toString(36).substring(2, 15)}.${fileExt}`;
+    const filePath = `${fileName}`;
+
+    const { error: uploadError } = await supabase.storage
+      .from('media')
+      .upload(filePath, file);
+
+    if (uploadError) {
+      console.error("Upload error:", uploadError);
+      alert("Error uploading image. Make sure you created a public 'media' bucket.");
+      setUploadingImage(false);
+      return;
+    }
+
+    const { data } = supabase.storage.from('media').getPublicUrl(filePath);
+    setFormData({ ...formData, image_url: data.publicUrl });
+    setUploadingImage(false);
+  }
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
@@ -88,14 +115,21 @@ export default function ProjectModal({ isOpen, onClose, onSuccess, project }: Pr
           </div>
 
           <div className="flex flex-col gap-2">
-            <label className="font-mono text-[11px] uppercase tracking-[0.1em] text-ink-600">Image URL</label>
-            <input type="text" value={formData.image_url} onChange={e => setFormData({...formData, image_url: e.target.value})} className="border border-ink-200 p-3 bg-transparent text-ink-900 focus:outline-none focus:border-ink-900 transition-colors" />
+            <label className="font-mono text-[11px] uppercase tracking-[0.1em] text-ink-600">Project Image</label>
+            <input 
+              type="file" 
+              accept="image/*"
+              onChange={handleImageUpload} 
+              disabled={uploadingImage}
+              className="border border-ink-200 p-3 bg-transparent text-ink-900 focus:outline-none focus:border-ink-900 transition-colors file:mr-4 file:py-2 file:px-4 file:border-0 file:text-sm file:font-semibold file:bg-ink-100 file:text-ink-900 hover:file:bg-ink-200 cursor-pointer" 
+            />
+            {uploadingImage && <span className="text-xs text-ink-500 italic mt-1">Uploading image to media bucket...</span>}
             {formData.image_url && <img src={formData.image_url} alt="Preview" className="w-full h-32 object-cover grayscale mt-2 border border-ink-100" />}
           </div>
 
           <div className="flex gap-4 mt-6 pt-6 border-t border-ink-100">
             <button type="button" onClick={onClose} className="flex-1 border border-ink-200 py-3 font-mono text-[11px] uppercase tracking-[0.1em] text-ink-600 hover:bg-ink-100 transition-colors">Cancel</button>
-            <button type="submit" disabled={loading} className="flex-1 bg-ink-900 text-bone py-3 font-mono text-[11px] uppercase tracking-[0.1em] hover:bg-flare transition-colors">
+            <button type="submit" disabled={loading || uploadingImage} className="flex-1 bg-ink-900 text-bone py-3 font-mono text-[11px] uppercase tracking-[0.1em] hover:bg-flare transition-colors disabled:opacity-50">
               {loading ? "Saving..." : "Save Project"}
             </button>
           </div>
